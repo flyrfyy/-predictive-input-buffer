@@ -475,7 +475,7 @@
 			"description": "Works inside a level. Change it here or in Geode's keybinds popup.",
 			"category": "gameplay",
 			"default": [
-				"Seven"
+				""F6""
 			]
 		},
 		"bind-export": {
