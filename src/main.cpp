@@ -13697,9 +13697,7 @@ class $modify(BufMenuLayer, MenuLayer) {
         if (!MenuLayer::init()) {
             return false;
         }
-        CBF_STEP("main menu: heart button");
-        
-        }
+
         CBF_STEP("main menu: update check");
         checkForUpdate();
         CBF_STEP("main menu: done");
