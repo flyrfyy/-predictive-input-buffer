@@ -12512,6 +12512,7 @@ class $modify(BufEndLevelLayer, EndLevelLayer) {
 // builds the pause menu with its setup inlined, so the customSetup hook alone never ran there;
 // PlayLayer::pauseGame (below) adds it after the pause menu is shown. Never added twice.
 static void addPauseButton(CCNode* pause) {
+        return;
     if (!pause || pause->getChildByID("click-before-frames-menu"_spr)) {
         return;
     }
@@ -13697,16 +13698,7 @@ class $modify(BufMenuLayer, MenuLayer) {
             return false;
         }
         CBF_STEP("main menu: heart button");
-        auto* sprite = cbfIcon(46.f);  // test 91: the CBF icon (was a heart)
-        if (!sprite) {
-            geode::log::error("cbf-icon.png missing, no menu button");
-            return true;
-        }
-        auto* item = CCMenuItemSpriteExtra::create(sprite, this, menu_selector(BufMenuLayer::onBufferMenu));
-        item->setID("click-before-frames-button"_spr);
-        if (auto* bottom = this->getChildByID("bottom-menu")) {
-            bottom->addChild(item);
-            bottom->updateLayout();
+        
         }
         CBF_STEP("main menu: update check");
         checkForUpdate();
